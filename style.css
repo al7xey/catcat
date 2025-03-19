@@ -1,129 +1,116 @@
-/*  Стили по умолчанию (для больших экранов)  */
-.body {
-    font-family: "Open Sans", Arial, sans-serif;
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+    font-weight: normal;
     font-size: 100%;
-    font-style: normal;
-    background-image: url(https://i.pinimg.com/736x/02/e6/8f/02e68fc94afd499b3221f3515612cdc4.jpg);
-    overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
-    margin: 0; /* Remove default body margin */
-    padding: 0;
+}
+
+body {
+    min-width: 320px; /*  Уменьшаем минимальную ширину для лучшей адаптивности */
+    font-family: 'Open Sans', Arial, sans-serif;
+    padding: 0;  /* Убираем padding для body */
 }
 
 .header {
     height: 100vh;
-    background-repeat: no-repeat;
+    text-align: center;
+    background-color: #eee;
+    background-image: url(https://i.pinimg.com/736x/02/e6/8f/02e68fc94afd499b3221f3515612cdc4.jpg);
     background-position: center;
-    padding: 0; /* Reset padding */
-    /*  Optional:  If you want a specific background image size, use background-size: cover; or contain; */
-}
-
-.overlay {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    height: 100%;
+    background-size: cover;
 }
 
 .header-title {
-    text-transform: uppercase;
-    color: red;
-    text-shadow: 4px 4px 0 black;
+    margin: auto;
+    color: white;
     font-weight: 800;
-    font-size: 70px;
-    -webkit-text-stroke: 2px black;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center; /* Center text */
-}
-
-.cats {
-    box-shadow: 10px 10px 0 black;
-    border: 3px solid black;
-    max-width: 80%; /* Make image responsive */
-    height: auto;    /* Maintain aspect ratio */
-    margin: 20px 0;  /* Add space around the image */
-}
-
-.header-p {
+    font-size: 74px;
     text-transform: uppercase;
-    color: red;
-    text-shadow: 3px 3px 0 black;
-    font-weight: 800;
-    font-size: 55px;
-    -webkit-text-stroke: 1px black;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-align: center;  /* Center text */
 }
 
-/*  Медиа-запрос для экранов шириной до 768px (смартфоны)  */
+.overlay {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.content {
+    /*width: 770px;  Заменяем фиксированную ширину на относительную */
+    max-width: 960px;  /* Максимальная ширина */
+    width: 90%;          /* Занимает 90% доступного пространства */
+    margin: 100px auto 50px;
+    display: flex;          /* Включаем Flexbox */
+    flex-wrap: wrap;        /* Переносим карточки на новую строку, если не хватает места */
+    justify-content: space-between; /* Распределяем карточки равномерно */
+    align-items: stretch;    /* Выравниваем по высоте */
+}
+
+.card {
+    width: calc(50% - 25px);   /*  Ширина каждой карточки */
+    margin-bottom: 50px;     /*  Отступ снизу */
+    border: 1px solid black;
+    padding: 25px 25px 30px;
+    box-shadow: 4px 4px 0 black;
+    box-sizing: border-box;    /* Важно: учитываем padding и border */
+}
+
+.card-title {
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 31px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card-text {
+    font-size: 18px;
+}
+
+.card-image {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.footer {
+    display: flex;
+    height: 200px;
+    background-color: rgb(164, 0, 0);
+}
+
+.footer-author {
+    margin: auto;
+    color: white;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+/* Медиа-запрос для экранов шириной до 768px (например, смартфоны) */
 @media (max-width: 768px) {
-    .body {
-        font-family: "Open Sans", Arial, sans-serif;
-        font-size: 100%;
-        font-style: normal;
-        background-image: url(https://i.pinimg.com/736x/02/e6/8f/02e68fc94afd499b3221f3515612cdc4.jpg);
-        overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
-        margin: 0; /* Remove default body margin */
-        padding: 0;
+    .content {
+        width: 100%;            /*  Занимаем всю ширину экрана */
+        padding: 0 20px;          /*  Добавляем отступы слева и справа */
     }
-
+    .card {
+        width: 100%;            /*  Каждая карточка занимает всю ширину */
+        margin-right: 0;         /*  Убираем правый отступ */
+    }
     .header-title {
-        text-transform: uppercase;
-        color: red;
-        text-shadow: 2px 2px 0 black;
-        font-weight: 800;
-        font-size: 40px;
-        -webkit-text-stroke: 1px black;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center; /* Center text */
-    }
-
-    .cats {
-        box-shadow: 5px 5px 0 black; /* Smaller box shadow */
-        border: 2px solid black;    /* Smaller border */
-        max-width: 90%; /* Slightly wider image */
-        margin: 10px 0; /* Less space around the image */
+      font-size: 50px; /*  уменьшаем размер заголовка  */
     }
 
     .header-p {
-        text-transform: uppercase;
-        color: red;
-        text-shadow: 1px 1px 0 black;
-        font-weight: 800;
-        font-size: 30px;
-        -webkit-text-stroke: 1px black;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: center;  /* Center text */
-    }
-}
-
-/* Медиа запрос для маленьких телефонов (до 480px) */
-
-@media (max-width: 480px) {
-    .body {
-        font-family: "Open Sans", Arial, sans-serif;
-        font-size: 100%;
-        font-style: normal;
-        background-image: url(https://i.pinimg.com/736x/02/e6/8f/02e68fc94afd499b3221f3515612cdc4.jpg);
-        overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
-        margin: 0; /* Remove default body margin */
-        padding: 0;
-    }
-
-    .header-title {
-        font-size: 35px;
-    }
-
-    .header-p {
-        font-size: 25px;
-    }
-    .cats {
-        box-shadow: 3px 3px 0 black; /* Smaller box shadow */
-        border: 1px solid black;    /* Smaller border */
+      font-size: 30px; /*  уменьшаем размер  */
     }
 }
