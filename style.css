@@ -68,7 +68,9 @@
 
     .header-title {
         font-size: 40px; /*  Уменьшаем размер заголовка */
-        -webkit-text-stroke: 1px black; /* Adjust stroke for smaller font */
+        -webkit-text-stroke: 1px black;
+        font-weight: bold;
+        /* Adjust stroke for smaller font */
     }
 
     .cats {
@@ -80,7 +82,9 @@
 
     .header-p {
         font-size: 30px; /*  Уменьшаем размер подзаголовка */
-        -webkit-text-stroke: 0.5px black; /* Adjust stroke for smaller font */
+        -webkit-text-stroke: 0.5px black; 
+        font-weight: bold;
+        /* Adjust stroke for smaller font */
     }
 }
 
