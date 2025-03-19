@@ -61,16 +61,25 @@
 /*  Медиа-запрос для экранов шириной до 768px (смартфоны)  */
 @media (max-width: 768px) {
     .body {
-       /*  Убираем фон, если хотите другой на мобильных */
-       background-image: url(https://i.pinimg.com/736x/02/e6/8f/02e68fc94afd499b3221f3515612cdc4.jpg); /* Другое изображение для мобильных */
-       background-size: cover;  /* or contain */
+        font-family: "Open Sans", Arial, sans-serif;
+        font-size: 100%;
+        font-style: normal;
+        background-image: url(https://i.pinimg.com/736x/02/e6/8f/02e68fc94afd499b3221f3515612cdc4.jpg);
+        overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
+        margin: 0; /* Remove default body margin */
+        padding: 0;
     }
 
     .header-title {
-        font-size: 40px; /*  Уменьшаем размер заголовка */
+        text-transform: uppercase;
+        color: red;
+        text-shadow: 2px 2px 0 black;
+        font-weight: 800;
+        font-size: 40px;
         -webkit-text-stroke: 1px black;
-        font-weight: bold;
-        /* Adjust stroke for smaller font */
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center; /* Center text */
     }
 
     .cats {
@@ -81,16 +90,30 @@
     }
 
     .header-p {
-        font-size: 30px; /*  Уменьшаем размер подзаголовка */
-        -webkit-text-stroke: 0.5px black; 
-        font-weight: bold;
-        /* Adjust stroke for smaller font */
+        text-transform: uppercase;
+        color: red;
+        text-shadow: 1px 1px 0 black;
+        font-weight: 800;
+        font-size: 30px;
+        -webkit-text-stroke: 1px black;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;  /* Center text */
     }
 }
 
 /* Медиа запрос для маленьких телефонов (до 480px) */
 
 @media (max-width: 480px) {
+    .body {
+        font-family: "Open Sans", Arial, sans-serif;
+        font-size: 100%;
+        font-style: normal;
+        background-image: url(https://i.pinimg.com/736x/02/e6/8f/02e68fc94afd499b3221f3515612cdc4.jpg);
+        overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
+        margin: 0; /* Remove default body margin */
+        padding: 0;
+    }
 
     .header-title {
         font-size: 35px;
